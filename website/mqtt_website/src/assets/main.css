@@ -152,12 +152,45 @@ a,
   color: black; 
   border: 2px solid #aa0404;
 }
+.g {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  margin: 2px 2%;
+  transition-duration: 0.4s;
+  width: 35px;
+  cursor: pointer;
+}
+.button3 {
+  background-color: #04aa6d49; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+.button4 {
+  background-color: #aa040442; 
+  color: black; 
+  border: 2px solid #aa0404;
+}
+
 
 .button:hover {
   background-color: #04AA6D; /* Green */
   color: white;
 }
 .button2:hover {
+  background-color: #aa0404; /* Green */
+  color: white;
+}
+.button3:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
+.button4:hover {
   background-color: #aa0404; /* Green */
   color: white;
 }

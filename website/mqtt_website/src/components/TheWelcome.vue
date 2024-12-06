@@ -51,7 +51,7 @@ function startConnect() {
 
 // Obsługa utraty połączenia
 function onConnectionLost(responseObject: ConnectionLostResponse) {
-  logMessages.value.push("ERROR: Connection is lost.");
+  logMessages.value.push("ERROR: Stracono połączenie");
   if (responseObject.errorCode !== 0) {
     // Handle the error code here
   }
@@ -75,18 +75,18 @@ function onConnect() {
 // Publikowanie wiadomości
 function publish(message: string) {
   if (!client || !client.isConnected()) {
-    logMessages.value.push("Client is not connected.");
+    logMessages.value.push("Klient nie jest połączony.");
     return;
   }
 
   if (!message) {
-    logMessages.value.push("Message is empty.");
+    logMessages.value.push("Wiadomość jest pusta.");
     return;
   }
 
   const topicName = topic.value || "default/topic";
-  client.send(topicName, message); // Directly send message to topic
-  logMessages.value.push(`Message sent to topic ${topicName}`);
+  client.send(topicName, message);
+  logMessages.value.push(`Wiadomość wysłana do tematu ${topicName}`);
 }
 window.onload = () => {
   const container = document.getElementById("messages");
@@ -102,7 +102,7 @@ window.onload = () => {
 
 // Obsługa logów po zamontowaniu komponentu
 onMounted(() => {
-  logMessages.value.push("Application ready.");
+  logMessages.value.push("Aplikacja gotowa.");
 
   // Inicjalizacja kolorowego wybornika
    colorPickerRef = new iro.ColorPicker("#colorPicker", {width: 280, color: "rgb(255, 0, 0)", borderWidth: 1, borderColor: "#fff",});
@@ -126,9 +126,9 @@ onMounted(() => {
 
     <p>
       Mamy możliwość dwóch opcji:</p>
-      <li><button style="background-color: green; color: white; border: none; border-radius: 25%; padding: 5px 10px;">ON</button>
+      <li><button class="g button3">ON</button>
       odpowiada za załączenie leda na płytce ESP32-S3.</li>
-      <li><button style="background-color: red; color: white; border: none; border-radius: 25%; padding: 5px 10px;">OFF</button>odpowiada za wyłączenie leda na płytce ESP32-S3.</li>
+      <li><button class="g button4">OFF</button>odpowiada za wyłączenie leda na płytce ESP32-S3.</li>
       <li>Za pomocą koła kolorów możemy dynamicznie zmieniać kolory diody led.</li>
   </WelcomeItem>
 
